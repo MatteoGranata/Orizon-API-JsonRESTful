@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API JSON RESTful for a travel agency that allow insertion, modification, deletion and filtering of users, products and orders.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
