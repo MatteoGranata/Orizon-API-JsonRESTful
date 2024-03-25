@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 
 import userRoutes from './routs/users.js'
 import productRoutes from './routs/products.js'
-
+import orderRoutes from './routs/orders.js'
 
 const port = process.env.port || 3000
 dotenv.config()
@@ -17,8 +17,7 @@ app.use(cors())
 
 app.use('/users', userRoutes)
 app.use('/products', productRoutes)
-
-
+app.use('/orders', orderRoutes)
 
 mongoose.connect(process.env.CONNECTION_URL)
     .then(() => {
