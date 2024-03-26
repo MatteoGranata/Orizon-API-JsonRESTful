@@ -1,4 +1,5 @@
 import express from "express"
+import mongoSanitize from "express-mongo-sanitize"
 import mongoose from "mongoose"
 import cors from "cors"
 import dotenv from "dotenv"
@@ -12,6 +13,7 @@ dotenv.config()
 
 const app = express()
 
+app.use(mongoSanitize());
 app.use(express.json())
 app.use(cors())
 
