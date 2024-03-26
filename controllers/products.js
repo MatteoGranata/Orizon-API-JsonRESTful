@@ -44,7 +44,7 @@ export const deleteProduct = async (req, res) => {
     const { id } = req.params //Retrieve the product ID from the request
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: `id not compliant with mongo` }) 
     try {
-        await Product.findByIdAndDelete(id)
+        await Product.findByIdAndDelete(id) // Delete product
         res.status(200).json({ message: `product with id:${id} successfully deleted` })
     } catch (error) {
         res.status(404).json({ message: error.message })
