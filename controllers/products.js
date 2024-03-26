@@ -9,6 +9,15 @@ export const getAllProducts = async (req, res) => {
         res.status(404).json({ message: error.message })
     }
 }
+export const getProductByID = async (req, res) => {
+    const {id} = req.params
+    try {
+        const product = await Product.findById(id)
+        res.status(200).json(product)
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
 export const addProduct = async (req, res) => {
     const product = req.body
     const newProduct = new Product(product)
