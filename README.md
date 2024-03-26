@@ -74,10 +74,9 @@ npm install
  ### Users API
  
 - **GET all Users**
-
- - Endpoint: `/users/`
- - Method `GET` 
- - Invia la lista di tutti gli utenti registrati.
+- Endpoint: `/users/`
+- Method `GET` 
+- Invia la lista di tutti gli utenti registrati.
 
 - **GET User by ID**
 
