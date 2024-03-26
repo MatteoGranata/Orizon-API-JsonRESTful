@@ -6,7 +6,11 @@ const userSchema = mongoose.Schema({
         require: true
     },
     surname: {
-        type: String, 
+        type: String,
+        require: true
+    },
+    email: {
+        type: String,
         require: true
     }
 }, { timestamps: true }) //Automatically adds two timestamp fields: createdAt and uptadedAt
