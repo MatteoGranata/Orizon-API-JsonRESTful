@@ -67,14 +67,14 @@ To run this project, you will need to add the following environment variables to
 #### Get all Users
 
 ```http
-  GET /users/
+  GET/users/
 ```
 Invia la lista di tutti gli utenti registrati.
 
 #### Get User by ID
 
 ```http
-  GET /users/:id
+  GET/users/:id
 ```
 invia (se trovato) solo l'utente con i dettagli dell'ID corrispondente.
 
