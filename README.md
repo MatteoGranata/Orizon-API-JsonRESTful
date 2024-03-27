@@ -1,51 +1,51 @@
 
 #  ORIZON NODEJS API
 
-Questo progetto è un'applicazione API JSON RESTful in Node.js  per la gestione di utenti, prodotti e ordini. 
-L'applicazione utilizza un database MongoDB per lo storage e il recupero dei dati.
+This project is a JSON RESTful API application in Node.js for managing users, products, and orders.
+The application uses a MongoDB database for data storage and retrieval.
 
 
 
 
 ## Structure
 
-#### Cartelle:
-- **controllers**: Contiene i controller per le diverse funzionalità dell'API.
+#### Folders:
+- **controllers**: Contains controllers for the different features of the API.
 
-- **models**: Contiene i modelli Mongoose per le entità del dominio.
+- **models**: Contains Mongoose models for domain entities.
 
-- **routes**: Contiene le rotte per le API.
+- **routes**: Contains routes to APIs.
 
 #### File:
+- **index.js**: Main file that launches the application and configures dependencies.
 
-- **index.js**: File principale che avvia l'applicazione e configura le dipendenze.
-
-- **package.json**: Contiene le informazioni sul progetto e le dipendenze.
+- **package.json**: Contains information about the project and dependencies.
 
 
-## Funzionalità:
-- Inserimento, modifica e cancellazione di un utente. Caratteristiche: nome, cognome, email.
+## Functionality:
+- Insertion, modification and deletion of a user. Characteristics: name, surname, email.
 
-- Inserimento, modifica e cancellazione di un prodotto venduto. Caratteristica: nome.
+- Insertion, modification and deletion of a sold product. Feature: name.
 
-- Inserimento, modifica, cancellazione e di filtrare e visualizzare un ordine per data di inserimento degli ordini e per i prodotti in esso contenuti. Caratteristiche: prodotti dell'ordine e gli utenti che fanno parte dell'ordine.
+- Insertion, modification, cancellation and to filter and view an order by date of entry of the orders and by the products contained in it. Characteristics: products of the order and the users who are part of the order.
+
 ## Installation
 
 `Git bash` and `Node.js` are required for correct installation.
 
-- Clona il repository:
+- Clone the repository:
 ```bash
-  git clone https://github.com/MatteoGranata/Orizon-API-JsonRESTful.git
+   git clone https://github.com/MatteoGranata/Orizon-API-JsonRESTful.git
 
-  cd Orizon-API-JsonRESTful
+   cd Orizon-API-JsonRESTful
 
 ```
-- installa le dipendenze
+- install dependencies:
 ```bash
 npm install
 
 ```
-- Avvio
+- Start:
 ```bash
 npm start
 
@@ -69,47 +69,47 @@ To run this project, you will need to add the following environment variables to
 ```http
   GET/users/
 ```
-Invia la lista di tutti gli utenti registrati.
+Send the list of all registered users.
 
 #### Get User by ID
 
 ```http
   GET/users/:id
 ```
-invia (se trovato) solo l'utente con i dettagli dell'ID corrispondente.
+sends (if found) only the user with matching ID details.
 
 #### Create new User
 
 ```http
   POST /users/
 ```
-Crea un nuovo utente.
+Create a new user.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`      | `string` | **Required**. Nome dell'utente |
-| `surname`      | `string` | **Required**. Cognome dell'utente |
-| `email`      | `string` | **Required**. Email dell'utente |
+| `name`      | `string` | **Required**. User name |
+| `surname`      | `string` | **Required**. User's last name |
+| `email`      | `string` | **Required**. User email |
 
 #### Update User by ID
 
 ```http
   PATCH /users/:id
 ```
-Aggiorna le informazioni dell'utente con quel ID.
+Update the user's information with that ID.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`      | `string` | **Required**. Nome dell'utente |
-| `surname`      | `string` | **Required**. Cognome dell'utente |
-| `email`      | `string` | **Required**. Email dell'utente |
+| `name`      | `string` | **Required**. User name |
+| `surname`      | `string` | **Required**. User's last name |
+| `email`      | `string` | **Required**. User email |
 
-Per mantenere invariate una o piu informazioni dell'utente basta non inserire la request body corrispondente .
+To keep one or more user information unchanged, simply do not insert the corresponding request body.
 
 #### Delete User by ID
 
 ```http
   DELETE /users/:id
 ```
-  Elimina l'utente con quell'ID.
+ Delete the user with that ID.
 
 
 ## Product API
@@ -119,34 +119,34 @@ Per mantenere invariate una o piu informazioni dell'utente basta non inserire la
 ```http
   GET /products/
 ```
-Invia la lista di tutti i prodotti registrati.
+Send the list of all registered products.
 
 #### Get Product by ID
 
 ```http
   GET /products/:id
 ```
-invia (se trovato) solo il prodotto con i dettagli dell'ID corrispondente.
+send (if found) only the product with the corresponding ID details.
 
 #### Create new Product
 
 ```http
   POST /products/
 ```
-Crea un nuovo prodotto.
+Create a new product.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`      | `string` | **Required**. Nome del prodotto |
+| `name`      | `string` | **Required**. Product name |
 
 #### Update Product by ID
 
 ```http
   PATCH /products/:id
 ```
-Aggiorna le informazioni del prodotto con quel ID.
+Update the product information with that ID.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`    | `string` | **Required**. Nome del prodotto |
+| `name`    | `string` | **Required**. Product name |
 
 
 #### Delete Product by ID
@@ -154,8 +154,7 @@ Aggiorna le informazioni del prodotto con quel ID.
 ```http
   DELETE /products/:id
 ```
-  Elimina il prodotto con quell'ID.
-
+Delete the product with that ID.
 
 ## Orders API
 
@@ -164,52 +163,51 @@ Aggiorna le informazioni del prodotto con quel ID.
 ```http
   GET /orders/
 ```
-Invia la lista di tutti gli ordini registrati.
-
+Send the list of all registered orders.
 #### Get Order by ID
 
 ```http
   GET /orders/:id
 ```
-invia (se trovato) solo il prodotto con i dettagli dell'ID corrispondente.
+send (if found) only the product with the corresponding ID details.
 
 #### Get Order by Date
 
 ```http
   GET /orders/date/YYYY-MM-DD
 ```
-invia (se trovati) solo gli ordini della data corrispondente.
+send (if found) only the orders of the corresponding date.
 
 #### Get Order by ID
 
 ```http
   GET /orders/product/:id
 ```
-invia (se trovati) solo gli ordini con all'interno l'ID del prodotto corrispondente.
+send (if found) only orders with the corresponding product ID inside.
 
 #### Create new Order
 
 ```http
   POST /orders/
 ```
-Crea un nuovo ordine.
+Create a new order.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `users`      | `Id` | **Required**. Id dell'utente |
-| `products`      | `Id` | **Required**. Id di uno o più ordini |
+| `users`      | `Id` | **Required**. User ID |
+| `products`      | `Id` | **Required**. Id of one or more orders |
 
 #### Update Order by ID
 
 ```http
   PATCH /orders/:id
 ```
-Aggiorna le informazioni dell'ordine con quel ID.
+Update your order information with that ID.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `users`      | `Id` | **Required**. Id dell'utente |
-| `products`      | `Id` | **Required**. Id di uno o più ordini |
+| `users`      | `Id` | **Required**. User ID |
+| `products`      | `Id` | **Required**. Id of one or more orders |
 
-Per mantenere invariate una o piu informazioni dell'ordine basta non inserire la description corrispondente.
+To keep one or more order information unchanged, simply do not enter the corresponding description.
 
 
 
@@ -218,7 +216,7 @@ Per mantenere invariate una o piu informazioni dell'ordine basta non inserire la
 ```http
   DELETE /orders/:id
 ```
-  Elimina l'ordine con quell'ID.
+Delete the order with that ID.
 
 ## Tech Stack
 
